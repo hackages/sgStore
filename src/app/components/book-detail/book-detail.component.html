@@ -1,4 +1,4 @@
-<div *ngIf="book">
+<div [formGroup]="myGroup" *ngIf="book">
   <h2>{{ book?.title }} details!</h2>
   <div><label>Id: </label>{{ book?.id }}</div>
   <div>

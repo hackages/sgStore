@@ -17,6 +17,7 @@ import {
 
 // Components
 import {
+  LoginComponent,
   BookDetailComponent,
   BsBookInputComponent,
   AppComponent,
@@ -37,6 +38,7 @@ import { routes } from './app.routing';
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   declarations: [
+    LoginComponent,
     AppComponent,
     BsBookInputComponent,
     BsBooksComponent,
@@ -44,7 +46,7 @@ import { routes } from './app.routing';
     BookDetailComponent,
     DashboardComponent
   ],
-  providers: [BookService, SearchByTitleUrl, SearchService, BookResolve],
+  // providers: [SearchByTitleUrl, BookResolve],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

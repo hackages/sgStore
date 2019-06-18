@@ -5,7 +5,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Book } from '../models/book';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class SearchService {
   constructor(
     private http: HttpClient,

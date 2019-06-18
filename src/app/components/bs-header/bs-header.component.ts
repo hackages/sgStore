@@ -8,5 +8,6 @@ import { Component, Input } from '@angular/core';
   `
 })
 export class BsHeaderComponent {
+  @Input('titleFromParent')
   title: string;
 }

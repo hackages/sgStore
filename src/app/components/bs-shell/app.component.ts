@@ -1,10 +1,10 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-bookstore',
+  selector: 'app-book-store',
   styleUrls: ['app.component.css'],
   template: `
-    <app-bs-header [title]="title"></app-bs-header>
+    <app-bs-header [titleFromParent]="title"></app-bs-header>
     <router-outlet></router-outlet>
   `,
   encapsulation: ViewEncapsulation.None

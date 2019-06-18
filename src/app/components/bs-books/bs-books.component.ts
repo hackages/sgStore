@@ -4,12 +4,12 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-bs-books',
   template: `
-    <h3>All Books {{ books.length }}</h3>
+    <h3>All Books {{ books?.length }}</h3>
     <br />
     <hr />
     <div class="grid grid-pad">
       <a
-        routerLink="['/', 'books', book.id]"
+        [routerLink]="['/books', book.id]"
         class="col-1-4"
         *ngFor="let book of books"
       >
