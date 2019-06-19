@@ -20,7 +20,7 @@ import { Component, Input } from '@angular/core';
     </div>
   `
 })
-export class BsBooksComponent {
+export class BooksComponent {
   @Input()
   books: Book[];
 }

@@ -1,12 +1,11 @@
+import { BookModule } from './../book.module';
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Book } from '../models/book';
 import { switchMap, switchMapTo, tap, catchError } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class BookService {
   booksUrl = '/api/books';
 

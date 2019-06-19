@@ -20,6 +20,6 @@ export class LoginComponent {
   }
   login() {
     localStorage.setItem('token', 'fdmlfjeafaeezflajfz');
-    this.router.navigate(['dashboard']);
+    this.router.navigate(['books']);
   }
 }

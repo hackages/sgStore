@@ -14,7 +14,7 @@ import { Subject } from 'rxjs';
     </div>
   `
 })
-export class BsBookInputComponent {
+export class BookInputComponent {
   @Input()
   searchTerm$: Subject<string>;
 }

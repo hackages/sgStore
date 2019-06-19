@@ -1,3 +1,4 @@
+import { BookModule } from './../book.module';
 import { InjectionToken } from '@angular/core';
 
 export const SearchByTitleUrl = {

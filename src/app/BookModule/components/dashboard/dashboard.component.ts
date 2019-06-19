@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 
 import { SearchService } from '../../services/search.service';
-import { Book } from './../../models/book';
+import { Book } from '../../models/book';
 
 @Component({
   selector: 'app-dashboard',

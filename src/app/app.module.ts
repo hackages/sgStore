@@ -1,50 +1,24 @@
-import { BookResolve } from './services/book.resolve';
-import { RouterModule } from '@angular/router';
-// Modules
-import { ReactiveFormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
-
-// Services
-import {
-  SearchService,
-  SearchByTitleUrl,
-  BookService,
-  InMemoryDataService
-} from './services';
+// Modules
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
 
 // Components
-import {
-  BookDetailComponent,
-  BsBookInputComponent,
-  AppComponent,
-  BsBooksComponent,
-  BsHeaderComponent,
-  DashboardComponent
-} from './components';
+import { AppComponent, BsHeaderComponent } from './components';
 
 // routing
-import { routes } from './app.routing';
+import { routes, CustomPreloadingStrategy } from './app.routing';
 
 @NgModule({
   imports: [
     BrowserModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot(routes),
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: CustomPreloadingStrategy
+    })
   ],
-  declarations: [
-    AppComponent,
-    BsBookInputComponent,
-    BsBooksComponent,
-    BsHeaderComponent,
-    BookDetailComponent,
-    DashboardComponent
-  ],
-  providers: [SearchByTitleUrl, BookResolve],
+  declarations: [AppComponent, BsHeaderComponent],
+  providers: [CustomPreloadingStrategy],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

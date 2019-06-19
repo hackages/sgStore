@@ -1,5 +1,5 @@
 import { BookService } from './books.service';
-import { Book } from './../models/book';
+import { Book } from '../models/book';
 import {
   Resolve,
   ActivatedRouteSnapshot,
