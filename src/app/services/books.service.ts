@@ -4,7 +4,9 @@ import { Observable, of } from 'rxjs';
 import { Book } from '../models/book';
 import { switchMap, switchMapTo, tap, catchError } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class BookService {
   booksUrl = '/api/books';
 

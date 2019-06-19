@@ -4,4 +4,3 @@ export * from './bs-books/bs-books.component';
 export * from './bs-header/bs-header.component';
 export * from './bs-shell/app.component';
 export * from './dashboard/dashboard.component';
-export * from './login/login.component';
