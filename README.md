@@ -162,3 +162,11 @@ Lets discuss first what should be added into each module then refactor our appli
 ### State management in Angular with Redux and NgRX
 
 - Live demo (barebone redux)
+
+### State management with NgRx in our BookStore
+
+- Add NgRx in our application and move state elements into the store
+- The user's email should be visible in the header component at all time
+- Manage side effects in your application with NgRx Effect. You can find more information about it here: [NgRx](https://ngrx.io/guide/effects)
+
+### Bonus
