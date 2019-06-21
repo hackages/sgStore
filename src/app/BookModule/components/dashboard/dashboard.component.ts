@@ -1,3 +1,4 @@
+import { Store } from '@ngrx/store';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 
@@ -22,9 +23,10 @@ export class DashboardComponent {
   seachTerm$: Subject<string> = new Subject();
   books$: Observable<Book[]>;
 
-  constructor(private searchService: SearchService) {}
+  constructor(private store: Store<BookState>) {}
 
   ngOnInit() {
-    this.books$ = this.searchService.search(this.seachTerm$);
+    // this.books$ = this.searchService.search(this.seachTerm$);
+    this.store.dispatch({ type: 'fetch start' });
   }
 }

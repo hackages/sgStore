@@ -1,6 +1,9 @@
+import { LoginAction } from './../../store/actions';
+import { AuthState } from './../../store/state';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'bs-login',
@@ -9,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   form: FormGroup;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private store: Store<AuthState>) {
     this.form = new FormGroup({
       username: new FormControl('d@hackages.io'),
       password: new FormControl('mdfkjsmfamkj', [
@@ -19,7 +22,9 @@ export class LoginComponent {
     });
   }
   login() {
-    localStorage.setItem('token', 'fdmlfjeafaeezflajfz');
+    this.store.dispatch(
+      new LoginAction({ username: this.form.get('username').value })
+    );
     this.router.navigate(['books']);
   }
 }
